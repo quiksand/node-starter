@@ -1,7 +1,11 @@
 
 const sayHello = async ctx => {
-    ctx.body = "Hello world";
-    ctx.status = 200;
+    try {
+        ctx.body = { message: 'Hi There!' }
+        ctx.status = 200
+      } catch (err) {
+        ctx.status = 500
+      }
 };
 
 module.exports = {
